@@ -1,0 +1,39 @@
+awk '
+# 1. Convert x and y to ternary
+# 2. Subtract each digit without borrow
+# 3. That is it
+function dis_opr(x,y, _result,_i) {
+	for(_i=0; _i<10; _i++) {
+		_result += (int(x/3^_i)%3-int(y/3^_i)%3+3)%3 * (3^_i);
+	}
+	return _result;
+}
+
+BEGIN {
+	# List of loadable values in Dis 
+	# index of a shall be item.
+	split("0 33 42 62 94 95 123 124 125",__a);
+	for(i in __a){
+		a[__a[i]];
+	};
+
+	for(i = 0; i < 3; i++ ) {
+		# reset updated set.
+		split("", __a, ":");
+
+		for(x in a) {
+			for(y in a) {
+				print (i+1), x, y, r=dis_opr(x,y);
+				__a[r]; # to store.
+			}
+		}
+
+		# update set.
+		for ( x in __a ) a[x]
+	}
+}' |
+#
+# 1. nth operation 2. x 3. y 4. opr(x,y)
+#
+# align.
+keta
