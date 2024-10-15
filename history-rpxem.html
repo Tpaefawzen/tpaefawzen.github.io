@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang=ja>
+<meta charset=UTF-8>
+<title>wktk/RPxemの歴史</title>
+<meta name=author content=Tpaefawzen>
+<meta name=description content="プログラミング言語PxemのRuby実装を私が勝手に調べてまとめてみました。">
+<meta name=keywords content="Ruby,esolang,pxem,dialect,wktk,RPxem,RubyGem">
+<body>
+<header>
+<h1>wktk/RPxemの歴史</h1>
+</header>
+このページ作ったの<time>2024-10-15</time>
+<main>
+<h2>そもそもwktk/RPxemとは</h2>
+<p>Ruby実装のRPxem。現段階での最新版はv0.0.7
+<h2>各バージョンと変更内容</h2>
+<dl>
+<dt>v0.0.1</dt>
+<dd>なんかあったんだとは思う。初リリース、タグなし
+<dt>v0.0.2</dt>
+<dd>初タグ。機能変更なし
+<dt>v0.0.3
+<dd>リテラルとしてプッシュされるの全て<code>Integer</code>であって正の数だというルールに変更
+それまでは<code>FixNum</code>限定わず
+<dt>v0.0.4
+<dd>機能変更なし
+<dt>v0.0.5
+<dd>
+.iでEOFしたら-1得る
+負の数もプッシュするstack
+<dt>
+v0.0.6
+<dd>
+機能変更なし
+<dt>
+v0.0.7
+<dd>
+.dがちゃんとreturnするようになる
+<code>.c [] = []</code>になる それまでは<code>.c [] = [nil]</code>だった
+</dl>
+<h2>方言的差異</h2>
+<p>
+v0.0.6までについて
+.c [] = [nil]
+<p>
+v0.0.7から
+.c [] = []
+</main>
