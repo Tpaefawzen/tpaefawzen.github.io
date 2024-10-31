@@ -7,6 +7,12 @@
 <description>RSSフィードあったらXとかなくてよくね？</description>
 <language>ja</language>
   <item>
+    <title>スタイル付けてみた</title>
+    <description>XSLしてみた</description>
+    <pubDate>31 Oct 2024 21:40 +0900</pubDate>
+    <guid isPermaLink="false">20241031-004</guid>
+  </item>
+  <item>
     <title>色々とやってたらこんな感じになっちゃった。</title>
     <description>レコメンドされたやつをやってたらシンプルってなんだったけ問題と化した。</description>
     <pubDate>31 Oct 2024 14:22 +0900</pubDate>
