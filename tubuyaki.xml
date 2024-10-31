@@ -7,6 +7,13 @@
 <description>RSSフィードあったらXとかなくてよくね？</description>
 <language>ja</language>
   <item>
+    <title>色々とやってたらこんな感じになっちゃった。</title>
+    <description>レコメンドされたやつをやってたらシンプルってなんだったけ問題と化した。</description>
+    <pubDate>31 Oct 2024 14:22 +0900</title>
+    <guid isPermaLink="false">20241031-iroiro</guid>
+  </item>
+  <item>
+    <title>RSSのValidatorに怒られた</title>
     <description>
       日付をRFC 822で書かないといけないとかアホか。こっちは国際標準の書き方しか知らねえんだよ。
 
@@ -16,6 +23,7 @@
     <guid isPermaLink="false">20241031b</guid>
   </item>
   <item>
+    <title>作った</title>
     <description>
       初つぶやきを手書きで。
     </description>
