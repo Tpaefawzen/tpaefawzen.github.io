@@ -4,19 +4,19 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8" />
-<title><xsl:value-of="/rss/channel/title" /></title>
+<title><xsl:value-of select="/rss/channel/title" /></title>
 </head>
 <body>
-<h1><xsl:value-of="/rss/channel/title" /></h1>
-<p><xsl:value-of="/rss/channel/description" /></p>
+<h1><xsl:value-of select="/rss/channel/title" /></h1>
+<p><xsl:value-of select="/rss/channel/description" /></p>
 <xsl:for-each select="/rss/channel/item">
   <section>
-  <h2><xsl:value-of="title" /></h2>
+  <h2><xsl:value-of select="title" /></h2>
   <p>
-    🕛️<xsl:value-of="pubDate" />
+    🕛️<xsl:value-of select="pubDate" />
   </p>
   <p>
-    <xsl:value-of="description" />
+    <xsl:value-of select="description" />
   </p>
   </section>
 </xsl:for-each>
