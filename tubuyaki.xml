@@ -7,9 +7,16 @@
 <language>ja</language>
   <item>
     <description>
+      日付をRFC 822で書かないといけないとかアホか。こっちは国際標準の書き方しか知らねえんだよ。
+
+      見てみろよこのRSSフィードのソースコードのpubDateを。
+    </description>
+    <pubDate>31 Oct 2024 14:00 +0900</pubDate>
+  <item>
+    <description>
       初つぶやきを手書きで。
     </description>
-    <pubDate>2024-10-31T13:51+0900</pubDate>
+    <pubDate>31 Oct 2024 13:51 +0900</pubDate>
   </item>
 </channel>
 </rss>
