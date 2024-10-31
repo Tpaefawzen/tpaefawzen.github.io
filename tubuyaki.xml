@@ -3,6 +3,7 @@
 <channel>
 <title>Tpaefawzenのつぶやき</title>
 <link>https://tpaefawzen.github.io/tubuyaki.xml</link>
+<atom:link href="https://tpaefawzen.github.io/tubuyaki.xml" rel="self" type="application/rss+xml" />
 <description>RSSフィードあったらXとかなくてよくね？</description>
 <language>ja</language>
   <item>
