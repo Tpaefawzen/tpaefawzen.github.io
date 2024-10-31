@@ -1,0 +1,19 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Tpaefawzenのつぶやき",
+  "feed_url": "https://tpaefawzen.github.io/tubuyaki.json",
+  "description": "JSON FeedあったらXいらなくね？",
+  "authors": [
+    {
+      "name": "Tpaefawzen"
+    }
+  ],
+  "language": "ja",
+  "items": [
+    {
+      "id": "20241031-001",
+      "content_text": "RSS 2.0でつぶやくのをやろうとしたがスマホのRSSフィードリーダー、Readropsが読んでくれなかったので泣く泣くJSONで",
+      "date_published": "2024-10-31T14:50+09:00"
+    }
+  ]
+}
