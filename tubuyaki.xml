@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version=2.0>
+<channel>
+<title>Tpaefawzenのつぶやき</title>
+<link>https://tpaefawzen.github.io/tubuyaki.xml</link>
+<description>RSSフィードあったらXとかなくてよくね？</description>
+<language>ja</language>
+  <item>
+    <description>
+      初つぶやきを手書きで。
+    </description>
+    <pubDate>2024-10-31T13:51+0900</pubDate>
+  </item>
+</channel>
+</rss>
