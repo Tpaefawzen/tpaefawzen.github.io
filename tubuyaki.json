@@ -1,6 +1,7 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "Tpaefawzenのつぶやき",
+  "home_page_url": "https://tpaefawzen.github.io/tubuyaki.html",
   "feed_url": "https://tpaefawzen.github.io/tubuyaki.json",
   "description": "JSON FeedあったらXいらなくね？",
   "authors": [
