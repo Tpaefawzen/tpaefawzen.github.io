@@ -8,6 +8,14 @@
 <title><xsl:value-of select="/rss/channel/title" /></title>
 </head>
 <body>
+<header>
+  <nav>
+    <ol>
+      <li><a href="/">🏠️</a></li>
+      <li>つぶやき</li>
+    </ol>
+  </nav>
+</header>
 <h1><xsl:value-of select="/rss/channel/title" /></h1>
 <p><xsl:value-of select="/rss/channel/description" /></p>
 <xsl:for-each select="/rss/channel/item">
