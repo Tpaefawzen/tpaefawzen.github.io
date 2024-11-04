@@ -7,6 +7,25 @@
 <description>RSSフィードあったらXとかなくてよくね？</description>
 <language>ja</language>
   <item>
+    <title>XMLのサイトマップでHTMLっぽい何かを自動生成の端折り</title>
+    <description>
+      したかったけどできなかった。
+      https://www.sitemaps.org/protocol.html
+      によると、URLの一覧のようなものとかは出せるっぽかったけど
+      各ページの名前や要約や説明とかできそうになくてまじぴえん。
+      カテゴライズも無理っぽくて。RSSだったらワンチャンある説だが
+      うちはブログサイトじゃないもんだからマジアレ。
+      GitHubのウェブサイトの簡易的エディタで直接ページ書いてる。
+      シェルスクリプト使えよとはなる。しかしスマホでわざわざやってる。
+      PC昔みたいに使える気がしなくて終わってる。
+      PC開いてやることがyay -Syuしかなくてマジオワタ。
+      あと今日も掲示板のブロックが解除されず。希死念慮問題でブロックなう。
+      TWOWerからのメルシーも受け取れなくなったりと。
+    </description>
+    <guid isPermaLink="false">20241104-002</guid>
+    <pubDate>4 Nov 2024 22:05 +0900</pubDate>
+  </item>
+  <item>
     <title>ロボコンの番組やってた</title>
     <description>
       しかし私は高専入ったのにロボコンもプロコンもやれた人間じゃなかった。高専から専攻科への
