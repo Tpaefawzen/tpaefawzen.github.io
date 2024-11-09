@@ -4,8 +4,24 @@
 <channel>
 <title>Tpaefawzenのつぶやき</title>
 <link>https://tpaefawzen.github.io/tubuyaki.xml</link>
-<description>RSSフィードあったらXとかなくてよくね？</description>
+<description>このページがRSSフィードそのもの。RSSフィードあったらXとかなくてよくね？</description>
 <language>ja</language>
+  <item>
+    <title>No CSS Clubのメンバーに入れてもらった</title>
+    <description>
+      https://nocss.club/
+      にあるNo CSS Clubは、現代のウェブサイトの問題に立ち向かうプロジェクトで、
+      現代のウェブサイトでやたら使われがちな過剰なJSとか過剰なCSSの所為で
+      ウェブサイトに載ってる本質的な情報が隠れちゃってしまうやつに立ち向かうプロジェクト。
+      The no-JS ClubとかThe 250KB Clubのようなやつで、このNo CSS Clubに入る
+      条件というのが、サイトでJSもCSSも使わないこととなってる。そう、そんなもんを
+      使わなくても面白いサイトは作れるはずなんだ、という主張をしてるクラブである。
+      さて、うちのこのサイトのこのページ、RSSフィードで作った日記こそ、過剰装飾疑惑なう。
+      XMLにスタイルまでつけちゃってマジヤバシ
+    </description>
+    <pubDate>9 Nov 2024 17:08 +0900</pubDate>
+    <guid isPermaLink="false">20241109-001</guid>
+  </item>
   <item>
     <title>銀河鉄道の夜読んだ</title>
     <description>
