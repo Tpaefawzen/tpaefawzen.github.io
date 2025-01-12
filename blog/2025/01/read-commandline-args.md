@@ -5,11 +5,6 @@ author: Tpaefawzen
 description: INTERCALに機能を追加して、コマンドライン引数を読めるようにする拡張を提案
 keywords: INTERCAL,CLC-INTERCAL,C-INTERCAL,esolang,機能拡張,コマンドライン引数,command-line arguments
 
-<!--
-<link rel=canonical href="https://tpaefawzen.github.io/blog/intercal/read-commandline-args.html" />
-<meta name="keywords" content="INTERCAL,CLC-INTERCAL,C-INTERCAL,esolang,機能拡張,コマンドライン引数,command-line arguments" />
--->
-
 # INTERCALに機能を追加してコマンドライン引数を読めるようにしたーい！
 
 書いた日　2025年1月12日
