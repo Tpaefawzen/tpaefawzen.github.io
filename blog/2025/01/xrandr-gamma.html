@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="author" content="Tpaefawzen" />
+<title>xrandr(1)があればPCの画面の色温度を変えて目に優しくすることができる | Tpaefawzen</title>
+</head>
+<body>
+<h1 id="xrandr1pc">xrandr(1)があればPCの画面の色温度を変えて目に優しくすることができる</h1>
+<p>書いた日　2025年1月14日</p>
+<p>画面の明るさ変えるだけじゃムリだと思ってたり、
+親不知生えてて顎と頭が痛くて困りながらもPCでなんやかんややるというふざけた真似やっちゃいながらやってるんでここぞという時は画面の色を白すぎるやつではなく暖かみのある赤もしくは橙にしたいよね。
+昨日誤って灯油零しちゃってシンナー臭くて頭痛くてまじやばいんだけど。</p>
+<h2 id="xrandr"><a href="https://wiki.archlinux.jp/index.php/Xrandr">xrandr</a>とは</h2>
+<p>X Window Systemにて、画面のサイズとか、向き変更とか、マルチディスプレイの設定とか、なんやかんやができるやつ。</p>
+<h2 id="section">結論</h2>
+<pre><code>xrandr --output eDP1 --gamma 1:0.70:0.70
+</code></pre>
+<h2 id="section-1">参考にしたやつ</h2>
+<p><a href="https://manerosss.wordpress.com/2017/07/11/xrandr-gamma/">Control gamma widht xrandr to save your eyes</a> manero&#8217;s blog</p>
+</body>
+</html>
