@@ -55,8 +55,8 @@ Arch GNU/Linuxデビュー
 .PP
 このページを生成するのに、
 .LD
-groff -b -Thtml -KUTF-8 -ms -mwww 2025/01/first-blog-groff-www.ms > 2025/01/first-blog-groff-www.html &&
-xdg-open 2025/01/first-blog-groff-www.html
+groff -b -Thtml -KUTF-8 -ms -mwww 2025/01/10-first-blog-groff-www.ms > 2025/01/10-first-blog-groff-www.html &&
+xdg-open 2025/01/10-first-blog-groff-www.html
 .DE
 というコマンドを実行しました。
 .SH
