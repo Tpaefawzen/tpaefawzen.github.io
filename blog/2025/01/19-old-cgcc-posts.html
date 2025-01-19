@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="author" content="Tpaefawzen" />
+<title>昔のCode Golf &#38; Code Challenge Stack Exchangeの投稿一覧 | Tpaefawzen</title>
+</head>
+<body>
+<h1 id="code-golf-code-challenge-stack-exchange">昔のCode Golf &#38; Code Challenge Stack Exchangeの投稿一覧</h1>
+<p>書いた日　2025年1月19日</p>
+<p>2021年に旧アカウントで投稿していたやつ。
+Stack Exchangeでは、一度消えたアカウントで検索するの、できないので、
+SQLで操作するやつでなんやかんやするのじゃないと前に投稿してた内容の一覧が取得できない。</p>
+<p>ということで、一覧ページを作った。</p>
+<ul>
+<li><a href="list-cgcc-user100411.html">CGCCの方のリスト</a></li>
+<li><a href="list-metacgcc-user100411.html">CGCC Metaの方のリスト</a></li>
+</ul>
+<h2 id="section">作り方</h2>
+<p>部分的に<a href="__cgcc.sh">シェルスクリプト</a>で作った。これ、CGCCの方で、Metaな方についても、同様にすれば作れる。</p>
+<p><a href="https://github.com/ShellShoccar-jpn/Parsrs">Parsrs</a>必須。
+<a href="https://github.com/Tpaefawzen/ShellShoccar-jpn-Tukubai-just-sh">Unicageツール</a>必須。</p>
+<pre><code class="language-sh:__cgcc.sh">#!&#47;bin&#47;sh
+
+### Generate html.
+
+# Convert CSV into Unicage CSV-Value format
+cat cgcc-posts.csv | parsrc.sh |
+#
+# 1. Row 2. Column 3&#47;NF. Value
+#
+# Original CSV
+# 1. Post Link
+# 2. body
+# 3. owneruserid
+# 4. ownerdisplayname
+awk &#39;$2 &#60;= 2&#39; |
+#
+# Remove header line of original CSV
+awk &#39;$1 &#62; 1&#39; |
+#
+# Original CSV
+# 1. Post Link
+# 2. body
+#
+# Convert each body into actual one-field
+sed &#39;
+    &#47;^[0-9]* 2 &#47;{
+    s&#47;_&#47;\\_&#47;g;
+    y&#47; &#47;_&#47;;
+    s&#47;_&#47; &#47;; s&#47;&#47; &#47;;
+    }&#39; |
+#
+# 1. Row 2. Column 3. Value
+delf 1 2 |
+#
+# Now convert to tag-value field
+paste -d &#39; &#39; - - &#62; __cgcc.unicage
+
+mojihame -l .&#47;__cgcc.mojihame .&#47;__cgcc.unicage  &#62; __cgcc.html
+</code></pre>
+<h2 id="csv">元のCSV</h2>
+<p><a href="cgcc-posts.csv">CGCC</a></p>
+<p><a href="cgcc-meta-posts.csv">CGCC Meta</a></p>
+<h2 id="cgcc">現在のCGCCのアカウント</h2>
+<p>2022年9月から、
+<a href="https://codegolf.stackexchange.com/users/113493/%e9%b3%b4%e7%a5%9e%e8%a3%81%e5%9b%9b%e7%82%b9%e4%b8%80%e5%8f%b7">「鳴神裁四点一号」名義でアカウント作りなおして今に至る。</a></p>
+<p>2025年1月19日現在ではCGCCなんかまともにやってない。もしも私が久し振りに遊びに行ったら、よろしく。</p>
+<h2 id="section-1">ところでアナゴルについて</h2>
+<p>あれはほったらかしてる。</p>
+<h2 id="section-2">リンク集</h2>
+<ul>
+<li><a href="https://codegolf.stackexchange.com/">Code Golf Stack Exchange</a></li>
+</ul>
+</body>
+</html>

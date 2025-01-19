@@ -1,0 +1,341 @@
+<meta name=viewport content='width=device-width, initial-scale=1.0'>
+<style>
+article {
+    background-color: lightgray;
+}
+article:nth-child(even) {
+    background-color: lightyellow;
+}
+</style>
+<h1>List of my CGCC Meta posts as user100411</h1>
+
+<a href=#23942>23942</a>
+<a href=#24001>24001</a>
+<a href=#24042>24042</a>
+<a href=#24043>24043</a>
+<a href=#24045>24045</a>
+<a href=#20913>20913</a>
+<a href=#22022>22022</a>
+<a href=#22181>22181</a>
+<a href=#22424>22424</a>
+<a href=#23585>23585</a>
+<a href=#23714>23714</a>
+
+<article>
+<h2 id=23942><a href=https://codegolf.meta.stackexchange.com/a/23942>23942</a></h2>
+<main>
+<h1>Implement Unix Timestamp to Daytime</h1>
+<p><a href="https://codegolf.stackexchange.com/questions/tagged/code-golf" class="post-tag" title="show questions tagged &#39;code-golf&#39;" rel="tag">code-golf</a>
+<a href="https://codegolf.stackexchange.com/questions/tagged/date" class="post-tag" title="show questions tagged &#39;date&#39;" rel="tag">date</a></p>
+<p>Given an unsigned integer that represents a timestamp since 1970/01/01 00:00:00 (which is Unix epoch time), output one of these to represent the daytime in GMT timezone:</p>
+<ul>
+<li>An array that stores <code>year, month, date, hour, minute, second</code>.</li>
+<li>A string in format <code>YYYYMMDDHHmmss</code>.</li>
+<li>Or whatever similar, as long as it complies with standard i/o rules.</li>
+</ul>
+<h1>Rules</h1>
+<ul>
+<li>Implement the function or the full program <strong>from vanilla</strong>.
+<ul>
+<li>So no built-ins nor libraries that has the fuctionality (see next section).</li>
+</ul>
+</li>
+<li>Implement leap year, too; but don't leap second (although leap second is not supported).</li>
+<li>You just need to support up to 2038/01/19 (so input range shall be 0 to 2147483647 (inclusive)).</li>
+<li>Standard loopholes apply.</li>
+<li>Standard I/O rules apply.</li>
+<li>Input and output format should be consistent and not ambiguous.
+<ul>
+<li>So, for example, if output is a string like <code>1970121000</code>, it's unqualified, as it can be recognized as <code>1970/01/21 00:00:00</code>, <code>1970/12/01 00:00:00</code>, or <code>1970/01/02 10:00:00</code>.</li>
+</ul>
+</li>
+<li>Shortest code wins.</li>
+</ul>
+<h2>Examples of bad answers</h2>
+<ul>
+<li><a href="https://codegolf.stackexchange.com/a/178765/100411">This Java answer</a> uses <code>java.util.Date</code> and <code>java.text.SimpleDateFormat</code>.</li>
+<li><a href="https://codegolf.stackexchange.com/a/178676/100411">This Japt answer</a> has <code>ÐU s3</code>; it converts to date object, and then ISO string.</li>
+<li><a href="https://codegolf.stackexchange.com/a/178684/100411">This ksh answer</a> has... wtf?</li>
+</ul>
+<h1>Test cases</h1>
+<pre><code>0
+-&gt; 1970/01/01 00:00:00
+999999999
+-&gt; 2001/09/09 01:46:39
+1145141919
+-&gt; 2006/04/15 22:58:39
+1330500000
+-&gt; 2012/02/29 07:20:00
+1633773293
+-&gt; 2021/10/09 09:54:53
+2147483647
+-&gt; 2038/01/19 03:14:07
+</code></pre>
+<h1>Hint</h1>
+<p>Here are implementations:</p>
+<ul>
+<li><a href="https://github.com/pitex/minix-server/blob/master/fsrc/lib/ansi/gmtime.c#L10" rel="nofollow noreferrer">minix-server/gmtime.c</a></li>
+<li><a href="https://qiita.com/richmikan@github/items/14e32d099bd9bcc7f8e8#unix%E6%99%82%E9%96%93--%E6%97%A5%E5%B8%B8%E3%81%AE%E6%99%82%E9%96%93" rel="nofollow noreferrer">シェルスクリプトで時間計算を一人前にこなす</a>: AWK implementation.
+<ul>
+<li><a href="https://tio.run/##hVRNb9pAEL3zK6YEIhCm3i8bbJf0QnOoRA9tL1YSIQcW2Qm2I9skRVV@ezrjDyCOkq6stWfn7cybt7MOnu5ffvzsi@uXvx2AM1gF29VuGxQawnSXGRBHya7QBgTJGnK9SpN1XhnrYJ9DHiUrDdyZMJObHAPkMIMehz7YzAMo0IqSYtDjps2GHvpjXMHllh@Kxh82fqHIpCTLTZbGS/2QrsIjXCiEtwjvdZBRiuDPkhb1ekkruIf4YbbTcQa/U8h0rONbnYF@1Nm@qihNgHGTcaCsDYM0WX4PEp4XJ1yuKOoNRsfQZ1CEGr6VFJ/CiOYgPzJbY9SVxmB@XUCrLFPa1mehhDUcUdARp9KjDQx8uGiXMwQ6JxwRxnqfXGvXjVdt2qQZDO5mLa8Hd198nEajQ3SKP5ohtq8@zdjwKzJ00eCM1aZNpjqYlotLXrP3fV53I06aRTX0uXq9PTKfAOQtGXuePx433EiYdl9cfKSFf3Ms6zbTwX2V/LnM0OqhOE2KsO7vgo4sf9hGxaArOTDASZ7Or8yuUVPYLMsgQ48iJ2kB@S7TZR2X@jbbBdhpe10cWquGXwnSZeDXeoupi9@N3MIhq1EbfcKhGuZNC5woMf5QCBhB2VylqosZ98CDxfHYSdo59txrZosT/eYwnr1x13qC3ub6P0pvoiTYbvf4/ZDhTdgMun2m1mafiWoCmtzDdJ10Dd9YGHMjNGIjxzv/XP6tvvDz8x6bdR9z6PbE5a@efGGd8UX1J6ruL2Nu@XScZhBAMPI6@OA1d5XtSqfDubK44g5vELbJlMktEMK1piVCSmYxGhWCC5MJU2CMiSvKJNyWcjKRwpEVQuDvkJVZHNdSriU7gquJmkpbTSqEnBJRjgjpcuWyyT8" rel="nofollow noreferrer" title="AWK – Try It Online">Try it online!</a> I translated comments.</li>
+</ul>
+</li>
+</ul>
+<h1>Related problems</h1>
+<ul>
+<li><a href="https://codegolf.stackexchange.com/questions/178662/unix-timestamp-to-datetime-string">Unix timestamp to datetime string</a></li>
+<li><a href="https://codegolf.stackexchange.com/questions/36697/shortest-script-that-gives-the-time-passed-since-a-unix-timestamp">Shortest script that gives the time passed since a Unix timestamp</a></li>
+</ul>
+<h1>Meta</h1>
+<ul>
+<li>I once posted <a href="https://codegolf.stackexchange.com/q/237380/100411">here</a> but it's closed.</li>
+<li>TODO. define what builtins are.
+<ul>
+<li>The most problem is that that KSH answer has a function that directly converts to the objective string; should I prohibit it?</li>
+</ul>
+</li>
+<li>Maybe I wanted to say no date objects allowed.</li>
+<li>Is what is so-called date object ambiguos?</li>
+</ul>
+
+</main>
+</article>
+
+<article>
+<h2 id=24001><a href=https://codegolf.meta.stackexchange.com/a/24001>24001</a></h2>
+<main>
+<h1>What is the maximum value generated by interleaving?</h1>
+<p><a href="https://codegolf.stackexchange.com/questions/tagged/code-golf" class="post-tag" title="show questions tagged &#39;code-golf&#39;" rel="tag">code-golf</a>
+<a href="https://codegolf.stackexchange.com/questions/tagged/math" class="post-tag" title="show questions tagged &#39;math&#39;" rel="tag">math</a>
+<a href="https://codegolf.stackexchange.com/questions/tagged/base-conversion" class="post-tag" title="show questions tagged &#39;base-conversion&#39;" rel="tag">base-conversion</a></p>
+<p>INTERCAL has an interleave operator which does the following operation. Let left operand be <code>asdf</code> and right one <code>qwer</code> in binary, respectively. The operation produces a binary value <code>aqswdefr</code>.</p>
+<p>INTERCAL internally treats data as unsigned integers, so the value of the eight-bit value represents 0 to 255 in decimal, inclusively.</p>
+<p>If one operand has fewer bits than the other, the fewer one gets padded with zero before operation. So, <code>asd</code> interleaving with <code>qwer</code> is equal to <code>0asd</code> interleaving with <code>qwer</code>, which is <code>0qawsedr</code>: it represents 0 to 127 in decimal.</p>
+<p>Also, INTERCAL has an extension that handles any bases. Let's assume if 3-base numbers are handled. If each operand has 1 and 3 digits respectively, the maximum value for each operand is represented as <code>2</code> and <code>222</code> in 3-base number, respectively. Interleaving them results in <code>020222</code>, which is 188 in decimal.</p>
+<h1>Task</h1>
+<p>Given an input of three unsigned integers, output the largest possible value generated by interleaving. The three integers are: number of digits for left operand, number of digits for right operand, and in what base those operands are described with.</p>
+<h2>Restrictions</h2>
+<ul>
+<li>Base shall be 2 or greater.</li>
+<li>Each operand has at least 1 digit.</li>
+</ul>
+<h2>Rules</h2>
+<ul>
+<li>In either function or a program.</li>
+<li>Standard I/O rules apply, as long as every input and output value is represented as same base or same representation.
+<ul>
+<li>So varying output base is not allowed.</li>
+</ul>
+</li>
+<li>If input is represented as a list-like format, any orders of arguments or input values are fine.</li>
+<li>No standard loopholes.</li>
+<li>Shortest code wins</li>
+</ul>
+<h2>Test cases</h2>
+<p>TODO.</p>
+<h1>meta</h1>
+<ul>
+<li>Am I missing any appropriate tags yet?</li>
+</ul>
+
+</main>
+</article>
+
+<article>
+<h2 id=24042><a href=https://codegolf.meta.stackexchange.com/a/24042>24042</a></h2>
+<main>
+<p><a href="https://codegolf.stackexchange.com/a/237161/100411">I have posted this golfing tip for Bash before</a>:</p>
+<blockquote>
+<p>In Pure Bash (or any other pure shellscript), use <code>.</code> for looping.</p>
+</blockquote>
+<p>It's a tip that recomments using a file whose the program has. I have ever posted these answers that uses the tip:</p>
+<ul>
+<li><a href="https://codegolf.stackexchange.com/a/237156/100411">Implement a Truth-Machine</a></li>
+<li><a href="https://codegolf.stackexchange.com/a/237157/100411">1, 2, Fizz, 4, Buzz</a></li>
+<li><a href="https://codegolf.stackexchange.com/a/237158/100411">Swap every two elements in a list</a></li>
+<li><a href="https://codegolf.stackexchange.com/a/237161/100411">Tips for golfing in Bash</a></li>
+<li><a href="https://codegolf.stackexchange.com/a/237164/100411">Print 0 to 100 without 1-9 characters</a></li>
+<li><a href="https://codegolf.stackexchange.com/a/237165/100411">Uncomment a COBOL program!</a></li>
+</ul>
+<p>But I have thought that these situations can be thought:</p>
+<ul>
+<li>The program's file is placed on <code>/</code> (root directory), which prevents from using <code>cd /</code> to end the loop.</li>
+<li>The program's file is read-only, which prevents from using <code>&gt;x</code> to end the loop.</li>
+<li>The program is invoked from different directory, such as invoked with <code>bash /path/to/x</code>, <code>bash ../../x</code></li>
+<li>The program's directory has several files such as <code>bash</code>, <code>zsh</code>, <code>yes</code>, <code>rm -Rf /</code> that can have arbitrary data such as different shell script so invoking things such as <code>for x in *; do ...; done</code>, <code>*</code>, <code>eval *</code>, <code>. *</code> results in several behaviours.</li>
+<li>The shell script is invoked with the flag such as <code>-u</code> and <code>-e</code>.</li>
+</ul>
+<p>What assumptions must be given for such programs?</p>
+
+</main>
+</article>
+
+<article>
+<h2 id=24043><a href=https://codegolf.meta.stackexchange.com/a/24043>24043</a></h2>
+<main>
+<h1><a href="https://codegolf.stackexchange.com/q/237526/100411">Convert codepoint to UTF-1</a></h1>
+
+</main>
+</article>
+
+<article>
+<h2 id=24045><a href=https://codegolf.meta.stackexchange.com/a/24045>24045</a></h2>
+<main>
+<h1>Implement every dirname (1p)</h1>
+<p><a href="https://codegolf.stackexchange.com/questions/tagged/code-golf" class="post-tag" title="show questions tagged &#39;code-golf&#39;" rel="tag">code-golf</a>
+<a href="https://codegolf.stackexchange.com/questions/tagged/string" class="post-tag" title="show questions tagged &#39;string&#39;" rel="tag">string</a></p>
+<p>Implement the <a href="https://pubs.opengroup.org/onlinepubs/9699919799/utilities/dirname.html" rel="nofollow noreferrer">dirname</a> utility <strong>from scratch</strong>. It can be either a program or a fucntion. Assume input string satisfies these constraints:</p>
+<ul>
+<li>it contains <a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_282" rel="nofollow noreferrer">portable filename character set</a> only, and</li>
+<li>its length is up to 256 bytes, including trailing a NULL character (<a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/limits.h.html" rel="nofollow noreferrer">as in <code>_POSIX_PATH_MAX</code> from limits.h</a>).</li>
+</ul>
+<p>The dirname utility, however, has two kinds of implementations. This is because <a href="https://unix.stackexchange.com/q/256497/451199">some POSIX systems treat //foo/bar differently from /foo/bar.</a> So in this challenge, you must output every possible outputs, in any order. They can be duplicated.</p>
+<p>Here is the algorithm to implement the utility, provided <em>string</em> to be input:</p>
+<blockquote>
+<ol>
+<li>If <em>string</em> is <strong>//</strong>, skip steps 2 to 5.</li>
+<li>If <em>string</em> consists entirely of &lt;slash&gt; characters, <em>string</em> shall be set to a single &lt;slash&gt; character. In this case, skip steps 3 to 8.</li>
+<li>If there are any trailing &lt;slash&gt; characters in <em>string</em>, they shall be removed.</li>
+<li>If there are no &lt;slash&gt; characters remaining in <em>string</em>, <em>string</em> shall be set to a single &lt;period&gt; character. In this case, skip steps 5 to 8.</li>
+<li>If there are any trailing non- &lt;slash&gt; characters in <em>string</em>, they shall be removed.</li>
+<li>If the remaining <em>string</em> is <strong>//</strong>, it is implementation-defined whether steps 7 and 8 are skipped or processed.</li>
+<li>If there are any trailing &lt;slash&gt; characters in <em>string</em>, they shall be removed.</li>
+<li>If the remaining <em>string</em> is empty, <em>string</em> shall be set to a single &lt;slash&gt; character.</li>
+</ol>
+</blockquote>
+<p>The final <em>string</em> is the output.</p>
+<p>Standard I/O rules apply. Standard Loopholes apply. No builtins or libraries that does exactly same functionality. Shortest code wins.</p>
+<h1>Examples</h1>
+<p>Some examples are taken from <a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/basename.html" rel="nofollow noreferrer">POSIX explaination of basename()</a>.</p>
+<p><code>*</code> means an empty string. 1st column is input and 2nd and 3rd are possible outputs.</p>
+<pre><code>usr               .
+usr/              .
+*                 .
+..                .
+../               .
+/                 /
+//                /          //
+///               /
+/usr/             /
+//usr/            /          //
+///usr/           /
+/usr/lib          /usr
+//usr//lib//      //usr
+/home//dwc//test  /home//dwc
+</code></pre>
+<h1>Meta</h1>
+<ul>
+<li>?</li>
+</ul>
+
+</main>
+</article>
+
+<article>
+<h2 id=20913><a href=https://codegolf.meta.stackexchange.com/a/20913>20913</a></h2>
+<main>
+<p>I am a Pxem user; I have answered some in Pxem. Since tio.run does not provide Pxem, I am posting online demo, with my interpreter, <a href="https://tio.run/##nRhtV9pI9/v@imE2wAwQAoitZRxdRdtlV6mrbrcVqCdCkGhIgAQFgf71PvdOEgzW5@zL6SkzuXPnvr@NPdMffP@ZDIJg5NcM49YOBtObYtcbGh9@1S9HpvXefHyyXGM0s4bFkefbM9sfGjeOd2MMTTuE28VKcWi76@OffCsgujUV06Hp35NSqVIR1mzkTQJyUr8@ODmRdcGC@cgit1bQ9dx@JqO@gOvQdHt8z@hZD4Y7dRxS2cuUM5no8tnB5a@SaizCI/ooJqCOuLbAJV9bhRt9RWO2fzYbn68vLo9kpVTaioFnHy8an0@@XNc/np8f1y9lWbSI7hKqLQ4PLn69/nR8ftH42KwBGdLJZBZEaeURpaXAj/yhWK3vXL12xRpOHTOwiD/AC94ogN2jN@n5I8cOhOnYpk/0W5LVFuU81X6hq6zM4poVzT9PTuqnR7KmWIDSyLAn/IHdDxTzHkHECGB1Bx7RfuaUSFJG1kxB/IEFNgw8j3hOby@DXrADUubCejAdQlOkbzq@RZfLV9BJEl9JoHBmS9/qkaxvzIy5IXz4eTKyiu8T6SyXoLKiBDg/sAVNwALOg3z3ToALR7ZjMc76siS6pm8BhzIltktYP8dJH7whLN/sCtP3reGNM0fHe@DzA5foD8G0vAwmRK/7pFSubFW337zdeUeyrbab62SXtxNrRIpL8/GeZA@PPzSaCweY9GT1jQDrstHEdoM@yY7OvI9u025cd@v@xcOn/nvreHL@@Nfs8/zL05V5EFwOT3tHeT2lpdPZ5X9grZUkrbco0UqEdmSbUjCJ4z1aE@aHIjCa7tKCVuKc0DYVVIAhsyo0GKWFiwKtUS5Q9L70JaWi702YgIh3bNci/b2S4Au7z2KAvytLXOEB0EdL1jOZvpQ9vjhmXCiWpN7yO2JlgdcJYqnTxwF6ItyfsD5HduIl4fAECSlnlsRqtWbzIwPFIbxywnwOAMRY9aduN7A9l5ywrpK9mwJ5uR@Y3fuWk893ZDeBBFcQx@GLyGPUiWzggO6OrvMYDv8iGnq5EwkCdlitssoT@gPxIHxU8NE4JEKtIx33QEE3L43W42z@1DF0wzTQAu5uKWJOiyY5rJJiiECXtGtCRENs03VwKzzwNQupmB1jn5JfQDQ3D@RqoCeS9JRORs/IZFIuj2wZQvhiKl29LELJ3L1p0r3KB5EooRDk0fBI0XxVlpe6hMJRM5IHMJT73H9BMnY7xKiI7J72222sfXGK0iVrkdDMRHcCUsFKBJSWsRdMWcIFglTrU9wNAJD1c2Cyked2/YdJ0DFyzNwt87zRykPm6eF3hYN/rFkgVsbIWAAZ4UOBWPm7ZQH/o6MB7AageGDkUilTrBa@TBmtvhV5Q5hoFPu6Y@QNB6g23@vAhpngexCgC4Zqea4PAgBwgEBjaOhwXIZdLItYlSFJX6i5taFmdnHWsvOljtTAr/m8GEn41iuQFKNvEMCZDDBfhCA5CkN3euMHE6aVCltc9CzHgoZx1tJ1uyNCxeDiV4e0vpJOHu93jQVcYVQBNFqgGZKhhZDk3xLQkIJvLGxdVl7g/p@bTnRD8SRrpv@Y47PgsRUh9MHjWhp3gMhIaUlKIRrXKF94aDuoniMxk1rzvSBzqYXuEgkhkqKMOOJ7mEizXTnni2s5g8tzMZfXYrVhbYhcZrTzxv4sP6@B0/dnOqwpWHOwpmFNz2vQ3F7X67h5tMASdAcheLdri7t8PqxCgHbXweyI@yOkWjGnGUY2BBhgDrChYWDTRMlzxhnLcGHcwjeBwUvcQH9UeWBfQyb0rUkw7IDdjQxUTkMEIk5oAIUVAg74Qp2YCFypbQ@32OWwZffX84DqylnMYVbi2eUy/O4B6YkVTCcudp6QSx4JmL1ezFXHb/8miL9T@A1jTfzd1hDQsx9iQFoheDEB3yjmjL8u3zOagQoI5ngh2bodh2X5onUvIXkgweM@OAj7YBamhCCuPFk09HJ9dd0yLHbIF/eQdUCmI@EH@wH66xAoHu4iVByCy2BTOIwQYPOCOIoODLjq8z0CRY4LSG2/O7FHgYwExe5nWb1vtAgNbALjqPpMNrkzdsRRn8LvjHfkkZIJRNtscKH5U79vtMff1gcEDvbKiaPfn4@UNs8nlxsnyBSVfz7/zM754lwCmpJE1yPXk/ME0pTVo57A9PIuDBD13cr2G75fr2E/XaN9QFpggan7zSgaSHbqiqmLw8cz0Wi3brH7WqmmJ3X5E5nBrXoCdsBO46Z0cANTeg1S9vS1frS@MWLxCJMCg/Ip@wy/iXMvHCNeP3RZozAuHBWcZ5zFWAISzF2O5d4GAzbmKoIa0HAau9IRDYifKWNHMqrb40KjUOb8G22V9Hcdun@Ur@7Uqts49KzZ2CDDGfuwyfuanRbqhavCF744lbR4XSNNL8D6ZN1aEyrqEvDFFbBVM0847FXfhk7Z3uE3E8u8x4pXh1pbbW1td7B2XslqVa9Hl0MU7PRsJ7xXrkJ3q0u5hR01RIL3U2C7U0us0PYhdn23uoOIe9tvOVdgJcMz95AB/yK/EFbXAVmgM8UZu8p9SerYTRj/jF1uGsBPHH7eSIAHcMtd4RNXtRZMX4Jsv5MqpMEJd2CLT5i8hUZHqAVHR9zchd93ut6Rn5IOmCRY4WYCrzjPdeaZDMiEs9UBo8VJjcCWohqYACqpeQ4jZsOZj8@JBuSgDAFGCkgk5J@xPwrjkCPkMo@wy@IPFVphgEXAP3bHiYvzf3FxL3nxaS0UC6/GckXirxGDhCUGWCU3LT8Mj@9xsB@AyxAled5DzyRRoi6JeOIeisqGx1SJamDdzUMtYpg6INdduIT1kPPQcVIhoUefmak2hLx@U@EDkuZf5C82psYaBXIMWAOKjmi7pX29UWts@E41rg2KuRcUsZONo3rwWxQtTBkexkRHrTKKF61GrqyJl1pHzHjP2R8bTs0xxpwnuUI3/Ic006/STAPNtKKJrf37@@bB6bH8qf6xeXncvJTf43eQpg7oMnpdkz78uObQgjHrBcZjl@hdqKeJk4ja820sDJYbvIby4/W1rn2w7/qNnbjy3x7QzXM1tME8CHMU/tFGvydld1Iox2PWV1V1c6TNirk212CoapdxzOArCg8VbMlSDUN6l6i/Kk0xq70hTh4AnPwAfBazVyV6s7qBgCOHD@ceGdm9ghXYQ6sw6o6mhQf/SfTMwOJJNat/r2Zg2g7R3WolVgeUYMX2Yqe9QmXaZSP7/HbSK@Xq2@rO1pvqDrwy4DUDVlEDaTiAmuHb7N/bGV9koZ1wofigi4cdGiOMZTuL68fzC5nNxsMa5roNk5WNQwK@dni3ZXfk@s8b7XbaowUb0qt5nt4uSVmOZPUJXb/dx/CWGxPadmHAiI67La3UCXXDMSuasGMkiIQB0f3v/wM" rel="nofollow noreferrer">like this</a>.</p>
+<p>The problem is: code for the interpreter is long; so does the url. I have never been critized about that, but would I mind you if I keep submitting so?</p>
+
+</main>
+</article>
+
+<article>
+<h2 id=22022><a href=https://codegolf.meta.stackexchange.com/a/22022>22022</a></h2>
+<main>
+<h1><a href="https://codegolf.stackexchange.com/questions/223789/non-hamming-numbers">Non-Hamming numbers</a></h1>
+
+</main>
+</article>
+
+<article>
+<h2 id=22181><a href=https://codegolf.meta.stackexchange.com/a/22181>22181</a></h2>
+<main>
+<h1>Solve the halting problem for ^/a*b*/b*a*/[ab]*$ in /// <a href="https://codegolf.stackexchange.com/questions/tagged/code-golf" class="post-tag" title="show questions tagged &#39;code-golf&#39;" rel="tag">code-golf</a></h1>
+<p><a href="https://codegolf.stackexchange.com/questions/tagged/decision-problem" class="post-tag" title="show questions tagged &#39;decision-problem&#39;" rel="tag">decision-problem</a>
+<a href="https://codegolf.stackexchange.com/questions/tagged/halting-problem" class="post-tag" title="show questions tagged &#39;halting-problem&#39;" rel="tag">halting-problem</a></p>
+<p><a href="https://esolangs.org/wiki////" rel="nofollow noreferrer">///</a>, a.k.a. Slashes is an esoteric programming language with simple two operations. One is to output its source to remove from it. The other is to substitute itself. The language is proven to be Turing-complete, so some programs such as <code>/ab/bbaa/aab</code> won't halt while some such as <code>/ab/bbaa/ab</code> will.</p>
+<p>At first I questioned if halting problem for <code>^/[ab]*/[ab]*/[ab]*$</code> is solvable, but <a href="https://cs.stackexchange.com/a/142025/139273">I learned unlikely</a>.</p>
+<p>So I am simplying to <code>^/a*b*/b*a*/[ab]*$</code>.</p>
+<h1>Problem</h1>
+<p>Given a slashes program that matches <code>^/a*b*/b*a*/[ab]*$</code> in POSIX BRE (i.e. below), determine whether the program halts or not.</p>
+<h2>Format of program, if you are not familiar with POSIX BRE</h2>
+<pre><code>program = &quot;/&quot; first &quot;/&quot; second &quot;/&quot; third
+first = &quot;&quot; | first &quot;a&quot; | first first.b
+first.b = &quot;&quot; | first.b &quot;b&quot;
+second = &quot;&quot; | second &quot;b&quot; | second second.a
+second.a = &quot;&quot; | second.a &quot;a&quot;
+third = &quot;&quot; | third &quot;a&quot; | third &quot;b&quot;
+</code></pre>
+<h1>Constrains</h1>
+<p>In this problem every program's length is up to 153.</p>
+<h1>Detailed rules</h1>
+<ul>
+<li>Can be either a full program or a function.</li>
+<li>Standard i/o apply.
+<ul>
+<li>Examples of input format
+<ul>
+<li>a string of program</li>
+<li>three strings p,q,r when the program is <code>/p/q/r</code></li>
+<li>integers p,q,r,s and a string t when the program is <code>/a\{p\}b\{q\}/b\{r\}a\{s\}/t</code></li>
+<li>entirely as an integer (think of it by yourself)</li>
+</ul>
+</li>
+<li>Examples of output format
+<ul>
+<li>zero or one</li>
+<li>string</li>
+<li><a href="https://codegolf.meta.stackexchange.com/a/12317/100411"><strong>by halting or not is not an option</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Standard loopholes apply.</li>
+<li>This is <a href="https://codegolf.stackexchange.com/questions/tagged/code-golf" class="post-tag" title="show questions tagged &#39;code-golf&#39;" rel="tag">code-golf</a>; shortest code wins.</li>
+</ul>
+<h1>Examples</h1>
+<p><a href="https://tio.run/##bVC7DoIwFN37FU0XWoUI7gw0IcZBYyI/UB5qo7mYtoSB8O1IBZUmLs09j57T3lzo2zCI9o49nu72x04rASVlKMmy9HDKznEUhqi9yUdFP1QQsA5dpNImiRXdhmwCfAa6KmooEwfxrxHEY56fqr7GZEPm9ClwzH7z9sBEOCJ3xZygL/rFzH1Lq3UuRafEdvyJeT/U6dNNro2iROTEl2DotKfVlq0jP7K/GUlsnajv0aWBwsgasKLAOlWZRgFe3ALWe8PwAg" rel="nofollow noreferrer" title="Bash – Try It Online">Testcase generator 1</a></p>
+<p><a href="https://tio.run/##hVZda1sxDH33r7gtgTbQoO7jJYS87n/oQMtCYS25dGOU7q9nsy3Zknxvlz60jWV9HB0dGTx/v1z419O0@zbRtPs5zUeabtJbejluPqfzcfMlzcfN1/T4fL49Hff7/WG3Ox22b@n0eDtf/XnZvm3uj5v76@n3w3x9wPmBn97T/Irbl7vz3bxN79nw6rQVqx/P1/@@@pRuLhcCAWw@BC4/SJT/zcf9k4/r70SkF7h@w@VG/rtdySb5LB9DfMqxXOUSrByWv7n4UAtK4qG7NGnWyyhXQpbeKmdWfRTDEqdcg69Os0ItxQUurqAXzc0eCrVWcZ8R8slwRazFgpTrMDaJqz/BL5FPyPuFQlnDt1ZYq9rRGCyDTAs@i0cMCZocBQ/msQUGF0HMJt@v5/9aiA4kC18qBo6JzL7yCuVAPWtJAqUhl6M0R6o7EHrTx8skjtWs9ohcGzXFhoKhVOsYWgSs4NjrdWCH44oVhQ6z9qi7lzGXLvMCNkYMan0yo74b1AnqWUpCYKGwThzlbCwRTWX5AAvDIFRpoRGMJFQbrYYmCv41xcJyjmhqe6WBoTrPdOEkFoTDCM4gHXpZWRRSB0xzBo6TFmVErMPeMrEyvCBsIiciEQFL8tonOqzA8GDXIBfqSLZRAqyMsE2dw7ZJhBU2ozUmaF@QKi2uEgwrRggbCGtBeRSTriLtlNxKZEWNjY0PQ6rNMGnGNQg7phz1uLatK@UH9Vb4ZMu0zDHWrkyKRx477XRrdlxF0qyocX2EA4@6/ItokNt@Os3CwKJX5GDtyPU92vcdtQdFAxZLTIYC5fgbSSip1ttDITA7SIkW2sB9DwwIYWkszErAf437yFr2AbTWSaXEwtsJbvga4H4mG9MLHG5MyO2REBbazWBAaI8n3eTk0F94d/mIHKe1w2iq@GDq@wDoMgJjeel3UUbfa@vu5fXhlpd/kg1KYd4L41IQQsE8CKv4mzfKIGhrL0fzwnJDS03Xkf4C" rel="nofollow noreferrer" title="Bash – Try It Online">My noncompetive solution</a></p>
+<pre><code>///: no
+/a//: yes
+/ab/bba/aab: yes
+/ab/bba/aaab: yes
+/ab/bba/aabb: no
+</code></pre>
+<h1>Meta</h1>
+<ul>
+<li>Were similar things ever done before?</li>
+<li>I am not even sure if this problem is solvable.</li>
+<li>Just thought there are answers if I clarify maximum length of input.</li>
+<li>Should I change the problem's genre to <a href="https://codegolf.stackexchange.com/questions/tagged/algorithm" class="post-tag" title="show questions tagged &#39;algorithm&#39;" rel="tag">algorithm</a>? Would making a maximum length of the program be boring?</li>
+</ul>
+
+</main>
+</article>
+
+<article>
+<h2 id=22424><a href=https://codegolf.meta.stackexchange.com/a/22424>22424</a></h2>
+<main>
+<p><a href="https://codegolf.stackexchange.com/questions/69/golf-you-a-quine-for-great-good/221399#221399">My quine in Pxem</a> was <a href="https://codegolf.stackexchange.com/questions/69/golf-you-a-quine-for-great-good/221399#comment523281_221399">criticised as not being a quine</a>, as they output their filenames, not the content of those files. A <a href="https://esolangs.org/wiki/Pxem" rel="nofollow noreferrer">Pxem</a> program is represented as a pair of a filename and content of file.</p>
+<p>So far I have submitted three versions of quines; one requires content of file to be empty; the other two do not. Are these valid quines per our site rules?</p>
+<p>Should I consider resubmitting as distinct notation such as <a href="https://github.com/hakatashi/esolang-box#pxem" rel="nofollow noreferrer">esolang-box</a> who represents a Pxem program as a string?</p>
+
+</main>
+</article>
+
+<article>
+<h2 id=23585><a href=https://codegolf.meta.stackexchange.com/a/23585>23585</a></h2>
+<main>
+<h1><a href="https://codegolf.stackexchange.com/questions/237315/convert-codepoint-to-utf-9">Convert codepoint to UTF-9</a></h1>
+
+</main>
+</article>
+
+<article>
+<h2 id=23714><a href=https://codegolf.meta.stackexchange.com/a/23714>23714</a></h2>
+<main>
+<h1><a href="https://codegolf.stackexchange.com/questions/233077/custom-rows-of-smileys-triangle">Custom Rows of Smileys Triangle</a></h1>
+
+</main>
+</article>

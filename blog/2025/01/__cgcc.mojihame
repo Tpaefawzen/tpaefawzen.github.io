@@ -1,0 +1,7 @@
+<article>
+<h2 id=%1><a href=https://codegolf.stackexchange.com/a/%1>%1</a></h2>
+<main>
+%2
+</main>
+</article>
+
